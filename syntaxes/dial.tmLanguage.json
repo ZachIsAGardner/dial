@@ -1,0 +1,71 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "dial",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "^\\s*\\[.*$"
+				},
+				{
+					"name": "keyword.control",
+					"begin": "{",
+					"end": "}"
+				},
+				{
+					"name": "string",
+					"match": "<(.*?)>"
+				},
+				{
+					"name": "keyword.control",
+					"match": "^\\s*@.*$"
+				},
+				{
+					"name": "comment",
+					"match": "^\\s*#.*$"
+				},
+				{
+					"name": "keyword.control",
+					"match": "=>"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\?Q"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\?B"
+				},
+				{
+					"name": "entity.name.type",
+					"match": "(?<=\\=>.*).*"
+				},
+				{
+					"name": "entity.name.type",
+					"match": "((.*)=)(?![^<]*>)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.dial",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dial",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "text.dial"
+}
