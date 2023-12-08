@@ -6,21 +6,33 @@
   "engines": {
     "vscode": "^1.84.0"
   },
+  "repository": {
+    "url": "https://github.com/ZachIsAGardner/dial"
+  },
   "publisher": "zachisagardner",
   "categories": [
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "dial",
-      "aliases": ["dial", "dial"],
-      "extensions": [".dial"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "dial",
-      "scopeName": "text.dial",
-      "path": "./syntaxes/dial.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "dial",
+        "aliases": [
+          "dial",
+          "dial"
+        ],
+        "extensions": [
+          ".dial"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dial",
+        "scopeName": "text.dial",
+        "path": "./syntaxes/dial.tmLanguage.json"
+      }
+    ]
   }
 }
