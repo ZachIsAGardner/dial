@@ -2,3 +2,7 @@
     "name": "emphasis",
     "match": "(?<=\\>).+?(?=\\<)"
 },
+
+vsce package
+
+secondary click dial-0.0.1.vsix => Install Extension VSIX

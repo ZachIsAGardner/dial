@@ -52,6 +52,10 @@
 				{
 					"name": "entity.name.type",
 					"match": "((.*)=)(?![^<]*>)"
+				},
+				{
+					"name": "entity.name.type",
+					"match": "\\(([^\\)]+)\\)"
 				}
 			]
 		},
