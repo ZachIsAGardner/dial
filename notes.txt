@@ -6,3 +6,39 @@
 vsce package
 
 secondary click dial-0.0.1.vsix => Install Extension VSIX
+
+
+
+entity.name.type
+green
+
+keyword
+blue
+
+keyword.control
+purple
+
+
+
+Branch/Question to Key
+(?<=\\=>.*).*
+Matches anything after =>
+
+Key
+((.*)=)(?![^<]*>)
+Before =
+
+\\(([^\\)]+)\\)
+Between parentheses
+
+Key Condition
+\\(([^\\)]+)\\).*(?==)
+Between parentheses and before =
+
+Condition
+(\\(.*\\)).*(?==>)
+Before and not including => also in parentheses
+
+Special text
+^\\s*\\<.*$
+Between angle brackets

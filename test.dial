@@ -1,1 +1,78 @@
 #asdf
+
+CUTSCENE_MERCHANT_Q2 = yeag (gib dollar)
+
+CUTSCENE_MERCHANT_7 = u <s=5>DO NOT</s> hav the stuf! <s=10>BEGONE!!!!</s>
+
+%BULL_DOG.FARM (!FOOD_ANY) =
+    I found these weird seeds in the trash... I think they're cabbages. (is that right?).
+
+    You think you could help me water them? Maybe somethin' will happen, I dunno.
+
+
+# This is a COMMENT it does nothing. Good for describing things.
+
+# Everything is on one line, this creates a KEYWORD.
+MY_NAME = Zachary
+# Only "Zachary" would need to be translated, not the KEY of the KEYWORD (MY_NAME).
+
+# Lines are broken over several lines, this creates a CHAT. The KEY of this CHAT is NAME.ID.
+# NAME: The first word will use the profile of the same name if there is one. Otherwise arbitrary.
+# ID: Arbitrary word.
+NAME.ID =
+    This the first textbox/line in a cutscene.
+
+    This is the second one. Also, my name is {MY_NAME}!
+
+    # Here is a TEXTBOX MODEL, it changes the portrait and a few other things. 
+    [Portrait: Questioning, CrawlPitch: 1000, CrawlTime: 12000]
+    Does that make sense?
+
+    # This prompts the player with a question. The "=>" points to another CHAT that will be used depending on their choice.
+    ?Q
+        Yeah, makes sense => YES
+        I'm confused => NO
+
+*YES =
+    I'm glad that makes sense.
+
+*NO = 
+    I'm sorry.
+
+NAME.ID_2 =
+    This is another CHAT. 
+    
+    I'll say this if you talk to me again after exhausting the "NAME.ID" CHAT entry.
+    
+    "*YES" and "*NO" are skipped because they start with a "*".
+
+NAME.ID_3 =
+    I will say this after "NAME.ID_2". If you leave the room and come back again, I'll start again from the "NAME.ID" CHAT entry.
+
+    @A1
+
+    I just did an arbitrary ACTION with the name "@A1" defined in the C# code behind.
+
+    # This is a BRANCH. The next CHAT will be decided by an arbitrary condition, in this case whether or not the player is wearing a hat.
+    ?B
+        (IS_WEARING_HAT) => MENTION_HAT
+        => MENTION_NAKED
+
+*MENTION_HAT =
+    Oh, I see you're wearing a hat. It's very nice.
+
+*MENTION_NAKED =
+    Oh, I see you're not wearing a hat. That means you're naked!
+
+%NAME.ID_4 =
+    This CHAT starts with a "%". That means you I will never say this ever again.
+
+    Well, unless you start a new file of course.
+
+    That... <s=10>makes me wanna SHAKE!</s> Okay?
+
+    And it... <f=2,8>makes me wanna FLOAT!</f> Right?
+
+    OH GOD! <c=#ff0000>EVERYTHING IS RED!</c> AHHHHH!
+
+    I'm okay.

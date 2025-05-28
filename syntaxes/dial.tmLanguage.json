@@ -4,9 +4,6 @@
 	"patterns": [
 		{
 			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
 		}
 	],
 	"repository": {
@@ -17,17 +14,8 @@
 					"match": "^\\s*\\[.*$"
 				},
 				{
-					"name": "keyword.control",
-					"begin": "{",
-					"end": "}"
-				},
-				{
-					"name": "string",
+					"name": "keyword",
 					"match": "<(.*?)>"
-				},
-				{
-					"name": "keyword.control",
-					"match": "^\\s*@.*$"
 				},
 				{
 					"name": "comment",
@@ -35,7 +23,12 @@
 				},
 				{
 					"name": "keyword.control",
-					"match": "=>"
+					"match": "^\\s*@.*$"
+				},
+				{
+					"name": "entity.name.type",
+					"begin": "{",
+					"end": "}"
 				},
 				{
 					"name": "keyword.control",
@@ -46,6 +39,10 @@
 					"match": "\\?B"
 				},
 				{
+					"name": "keyword.control",
+					"match": "=>"
+				},
+				{
 					"name": "entity.name.type",
 					"match": "(?<=\\=>.*).*"
 				},
@@ -54,8 +51,12 @@
 					"match": "((.*)=)(?![^<]*>)"
 				},
 				{
-					"name": "entity.name.type",
-					"match": "\\(([^\\)]+)\\)"
+					"name": "keyword",
+					"match": "(\\(.*\\)).*(?==>)"
+				},
+				{
+					"name": "keyword",
+					"match": "\\(([^\\)]+)\\).*(?==)"
 				}
 			]
 		},
