@@ -1,0 +1,11 @@
+DEBUG
+
+uninstall extension
+
+vsce package
+
+secondary click dial-0.0.X.vsix => Install Extension VSIX
+
+PUBLISH
+
+vsce publish
