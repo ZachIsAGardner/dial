@@ -8,4 +8,10 @@ secondary click dial-0.0.X.vsix => Install Extension VSIX
 
 PUBLISH
 
+Get new Public Access Token (PAT)
+https://dev.azure.com/zachisagardner/_usersSettings/tokens
+
+vsce login zachisagardner
+yes, you want to override the PAT
+
 vsce publish
